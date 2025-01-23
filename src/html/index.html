@@ -10,13 +10,42 @@
         <meta name="generator" content="Visual Studio Code">
         <link href="../css/styles.css" rel="stylesheet">
         <link href="../css/index.css" rel="stylesheet">
-        <script src="../scripts/javascript/index.js"></script>
+        <script src="../scripts/javascript/index.js" defer></script>
         <title>Index</title>
     </head>
     <body>
         <div class="all_encompasing_element">
             <div class="program_encompasing_element">
-               
+                <section>
+                    <form id="bucketForm">
+                        <input type="text" id="activityName" placeholder="Vad vill du göra?" required />
+                        <select id="activityCategory">
+                            <option value="Resor">Resor</option>
+                            <option value="Äventyr">Äventyr</option>
+                            <option value="Lärande">Lärande</option>
+                            <option value="Hobby">Hobby</option>
+                        </select>
+                        <button id="submit_activity">Lägg till</button>
+                    </form>
+                </section> 
+                <section id="bucket_lists">
+                    <article id="bucket_lists_resor">
+                        <p>Resor</p>
+                        <ul id="bucket_lists_resor_list"></ul>
+                    </article>
+                    <article id="bucket_lists_äventyr">
+                        <p>Äventyr</p>
+                        <ul id="bucket_lists_äventyr_list"></ul>
+                    </article>
+                    <article id="bucket_lists_lärande">
+                        <p>Lärande</p>
+                        <ul id="bucket_lists_lärande_list"></ul>
+                    </article>
+                    <article id="bucket_lists_hobby">
+                        <p>Hobby</p>
+                        <ul id="bucket_lists_hobby_list"></ul>
+                    </article>
+                </section> 
             </div>
         </div>
     </body>
