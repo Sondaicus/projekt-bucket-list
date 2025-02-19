@@ -44,11 +44,45 @@ function addToList(event)
             break;
     }
 
-    let bucketListObject = document.getElementById(bucketListId);
-
-   // bucketListObject.appendChild(newElementStringValue);
-
     let entry = document.createElement('li');
-    entry.appendChild(document.createTextNode(activityName));
+    let bucketListObject = document.getElementById(bucketListId);
+    let activityName_p = "<p>" + activityName + "</p>";
+    let activitydeleteButton = '<button>Delete</button>';
+    let newActivityContent = activityName_p + activitydeleteButton;
+    entry.innerHTML = newActivityContent;
+
+    const date = new Date();
+    const time = date.getTime();
+
+    entry.setAttribute("data-time", time);
+
+    let entry_nodeButton = undefined;
+
+    for(let i_0 = 0; i_0 < entry.childNodes.length; i_0++)
+    {
+        let currentChildNode = entry.childNodes[i_0];
+
+        if(currentChildNode.localName == "button")
+        {
+            entry_nodeButton = currentChildNode;
+            break;
+        }
+    }
+
+    if(entry_nodeButton != undefined)
+    {
+        entry_nodeButton.setAttribute("onClick", "deleteEntry(" + time + ")");
+    }
+    
     bucketListObject.appendChild(entry);
+}
+
+function deleteEntry(elementTime)
+{
+    let deletedElement = document.querySelector('li[data-time="' + elementTime + '"]');
+
+    if(deletedElement != null)
+    {
+        deletedElement.remove();
+    }
 }
