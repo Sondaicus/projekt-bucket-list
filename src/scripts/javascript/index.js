@@ -10,15 +10,12 @@ function init()
     document.getElementById("submit_activity").addEventListener("click", () => addToList(event));
 }
 
-
 function addToList(event) 
 {
     event.preventDefault();
 
     let bucketForm = document.getElementById("activityCategory").value;
     let activityName = document.getElementById("activityName").value;
-
-    //let newElementStringValue = `<li>${activityName}</li>`;
 
     let bucketListId = undefined;
 
